@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43712473, g: 0.48484582, b: 0.5651115, a: 1}
+  m_IndirectSpecularColor: {r: 0.17310971, g: 0.2163597, b: 0.29836875, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -234,6 +234,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421f8d71da61ff54fb0d478d6950c159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointLights:
+  - {fileID: 1267481355}
+  - {fileID: 1038283720}
+  - {fileID: 516581786}
+  - {fileID: 1869127709}
+  - {fileID: 1579485112}
+  - {fileID: 1566562969}
+  - {fileID: 372043757}
+  - {fileID: 1597888561}
+  - {fileID: 121669413}
+  - {fileID: 1030180670}
 --- !u!114 &27271434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2753,7 +2764,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300001, guid: 1dd706bb85d8aef4e83a6229dbd62c36, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2cfa96c21e4f54c20824bd26cd46c10f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.221
+  m_Volume: 0.266
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3310,14 +3321,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 963194227}
+  m_PlaneDistance: 3
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4277,10 +4288,10 @@ AudioSource:
   m_GameObject: {fileID: 2136605355}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 1dd706bb85d8aef4e83a6229dbd62c36, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3ef834ceeeca4c54580b469caf1a1882, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.598
+  m_Volume: 0.378
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4289,7 +4300,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
