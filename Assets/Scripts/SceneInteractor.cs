@@ -13,7 +13,7 @@ namespace com
             {
                
                 public GameObject[] pointLights;
-                LightingIntensityValue myIntensValue;
+                
                 void SetDoorOpen(GameObject door)
                 {   
                     /**
@@ -29,8 +29,8 @@ namespace com
 
                     foreach (GameObject pointLight in pointLights)
                     {
-                        myIntensValue.GetComponent<LightingIntensityValue>().intensity = 
-                        pointLight.GetComponent<Light>().intensity = ;
+                       
+                        pointLight.GetComponent<Light>().intensity = go.GetComponent<LightingIntensityValue>().intensity;
                         
 
                     }
@@ -93,6 +93,11 @@ namespace com
                         SetLightingColor(Color.white);
 
                         //Destroy(c.gameObject);
+                    }
+
+                    if (c.gameObject.name == "IntensityCube0.0")
+                    {
+                            SetLightingIntensity(c.gameObject);
                     }
                     /**
                         This function is triggerred whenever your character collides with any of the colored cubes, intensity cubes, or the door, or the RugCarpet
