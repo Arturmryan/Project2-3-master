@@ -6,6 +6,12 @@ public class DoorController : MonoBehaviour
 {
 
     public GameObject instructions;
+    public AudioSource audioPlayer;
+
+    private void Start()
+    {
+        transform.eulerAngles = new Vector3(0, 180, 0);
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Door")
@@ -15,6 +21,7 @@ public class DoorController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 anim.SetTrigger("OpenClose");
+                audioPlayer.Play();
             }
         }
     }

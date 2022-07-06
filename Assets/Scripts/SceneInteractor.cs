@@ -13,7 +13,13 @@ namespace com
             {
                
                 public GameObject[] pointLights;
-                
+                public AudioSource squeakSound;
+
+                void PlaySound(AudioSource audioSource)
+                {
+                    squeakSound = GetComponent<AudioSource>();
+                }
+
                 void SetDoorOpen(GameObject door)
                 {   
                     /**
@@ -22,17 +28,16 @@ namespace com
                         This script contains a function called "OpenDoor" that needs to be called for the door to open and you can go outside
                     **/
                 }
-
+                
+    
                 void SetLightingIntensity(GameObject go)
                 {
                     pointLights = GameObject.FindGameObjectsWithTag("DynamicLights");
 
                     foreach (GameObject pointLight in pointLights)
                     {
-                       
-                        pointLight.GetComponent<Light>().intensity = go.GetComponent<LightingIntensityValue>().intensity;
+                         pointLight.GetComponent<Light>().intensity = go.GetComponent<LightingIntensityValue>().intensity;
                         
-
                     }
                     /**
                          The argument "go" is a GameObject datatype that will contain a reference to either of the intensity cubes on the floor (the ones from white to black).
@@ -53,8 +58,7 @@ namespace com
                     foreach (GameObject pointLight in pointLights)
                     {
                         pointLight.GetComponent<Light>().color = c;
-                        //c = new Color();
-                        
+                                                
                     }
                     
                     /**
@@ -73,29 +77,29 @@ namespace com
                     if (c.gameObject.name == "RedCube")
                     {
                         SetLightingColor(Color.red);
-
-                        //Destroy(c.gameObject);
+                        PlaySound(squeakSound);
+                        
                     }
                     else if (c.gameObject.name == "BlueCube")
                     {
                         SetLightingColor(Color.blue);
 
-                        //Destroy(c.gameObject);
+                        
                     }
                     else if (c.gameObject.name == "GreenCube")
                     {
                         SetLightingColor(Color.green);
 
-                        //Destroy(c.gameObject);
+                        
                     }
                     else if (c.gameObject.name == "RugCarpet")
                     {
                         SetLightingColor(Color.white);
 
-                        //Destroy(c.gameObject);
+                        
                     }
 
-                    if (c.gameObject.name == "IntensityCube0.0")
+                    if (c.gameObject.name.Contains("IntensityCube"))
                     {
                             SetLightingIntensity(c.gameObject);
                     }
